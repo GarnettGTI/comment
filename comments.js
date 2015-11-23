@@ -3,14 +3,13 @@ riot.tag('comment-box', '<h1 class="ui center aligned icon header">{ opts.title}
   this.comments = [];
 
   this.add = function(comment) {
-    comments.push(comment)
+    this.comments.push(comment)
     this.update()
   }.bind(this);
 
 });
 
-riot.tag('comment-list', '<comment each="{ opts.comments }" name="{ this.name }" message="{ this.message }"></comment>', function(opts) {
-  console.log(opts.comments)
+riot.tag('comment-list', '<div class="ui text container"> <comment each="{ opts.comments }" name="{ this.name }" message="{ this.message }"></comment> </div>', function(opts) {
 
 });
 

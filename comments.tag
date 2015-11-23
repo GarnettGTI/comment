@@ -7,14 +7,15 @@
   this.comments = [];
 
   add(comment) {
-    comments.push(comment)
+    this.comments.push(comment)
     this.update()
   }
 </comment-box>
 
 <comment-list>
-  <comment each={ opts.comments } name={ this.name } message={ this.message } />
-  console.log(opts.comments)
+  <div class="ui text container">
+    <comment each={ opts.comments } name={ this.name } message={ this.message } />
+  </div>
 </comment-list>
 
 <comment-form>
