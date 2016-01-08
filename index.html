@@ -1,16 +1,18 @@
 <html>
   <head>
     <title>Comments</title>
-    <script src="http://cdn.jsdelivr.net/riot/2.0/riot.min.js"></script>
+    <script src="node_modules/riot/riot.min.js"></script>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     <script src="semantic/dist/semantic.min.js"></script>
+    <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/sweetalert/dist/sweetalert.css">
   </head>
 
   <body>
     <comment-box></comment-box>
 
-    <script src="comments.js"></script>
+    <script src="/js/comments.js"></script>
     <script>riot.mount('comment-box', {title: 'Comments'})</script>
 
   </body>

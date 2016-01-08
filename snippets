@@ -1,0 +1,41 @@
+<h1 class="ui center aligned icon header">{ opts.title}</h1>
+<div class="ui grid">
+  <div class="right floated six wide column">
+    20 comments in total
+  </div>
+</div>
+<comment-list comments={ comments } />
+<comment-form />
+
+this.comments = [];
+
+add(comment) {
+  this.comments.push(comment)
+  this.update()
+}
+
+
+
+
+
+
+
+
+
+<div class="ui grid">
+  <div class="two wide column">
+    <a>
+      <i class="remove circle outline icon">Delete</i>
+    </a>
+  </div>
+  <div class="three wide column">
+    <div class="ui labeled button" tabindex="0">
+      <div class="ui icon button">
+        <i class="thumbs up icon"></i>
+      </div>
+      <a class="ui basic label">
+        1,048
+      </a>
+    </div>
+  </div>
+</div>
