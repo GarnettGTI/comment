@@ -140,20 +140,44 @@
       contentType: "application/json; charset=utf-8",
       dataType: "json",
       success: function(){
-        this.alert("Comment saved!");
+        swal({
+          title: "评论成功",
+          text: "评论已发布",
+          type: "success",
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "好的"
+          }, function(){
+            this.update();
+          });
       }
     });
-    this.update()
   }
 
   delete(e) {
   var self = this;
+  swal({
+    title: "Are you sure?",
+    text: "You will not be able to recover this imaginary file!",
+    type: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#DD6B55",
+    confirmButtonText: "Yes, delete it!",
+    closeOnConfirm: false
+    }, function(){
     $.ajax({
       url: "http://127.0.0.1:5000/comment/" + opts.comment.id,
       type: "DELETE",
       success: function(){
-        self.update();
-        location.reload();
+        swal({
+          title: "已删除",
+          text: "评论已删除",
+          type: "success",
+          confirmButtonColor: "green",
+          confirmButtonText: "好的"
+          }, function(){
+            self.update();
+            location.reload();
+          });
       },
       error: function(){
         // 弹出提示
@@ -168,6 +192,8 @@
           });
       }
     })
+  });
+
     this.update();
   }
 </comment>
